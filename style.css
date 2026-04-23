@@ -983,6 +983,7 @@
 }
 
 /* SECTION */
+/* SECTION */
 .roadmap {
   background: #eef2f1;
   padding: 100px 0;
@@ -995,23 +996,24 @@
   margin: 0 auto;
 }
 
-/* FLOW */
+/* FLOW (FIX 3 KOLOM) */
 .roadmap-flow {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
   position: relative;
+  margin-top: 50px;
 }
 
-/* LINE CONNECTOR */
+/* LINE CONNECTOR (SUDAH PAS TENGAH) */
 .roadmap-flow::before {
   content: "";
   position: absolute;
   top: 25px;
-  left: 5%;
-  width: 90%;
+  left: 12%;
+  width: 76%;
   height: 2px;
-  background: rgba(0,255,159,0.3);
+  background: rgba(0, 255, 159, 0.3);
 }
 
 /* STEP */
@@ -1019,34 +1021,46 @@
   text-align: center;
   position: relative;
   padding-top: 40px;
+  max-width: 280px;
+  margin: auto;
 }
 
 /* CIRCLE */
 .roadmap-step .circle {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   background: #00ff9f;
   color: #111;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 10px;
+  margin: 0 auto 15px;
   font-weight: bold;
+  z-index: 2;
+  position: relative;
 }
 
 /* TEXT */
 .roadmap-step h5 {
   color: #111;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
 .roadmap-step p {
   font-size: 14px;
   color: #666;
+  line-height: 1.6;
 }
 
-/* FOOTER */
+/* OPTIONAL CARD EFFECT */
+.roadmap-step:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+
+/* FOOTER (kalau dipakai) */
 .roadmap-footer {
   background: #fff;
   padding: 20px;
@@ -1054,10 +1068,11 @@
   box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
-/* MOBILE */
+/* TABLET */
 @media (max-width: 991px) {
   .roadmap-flow {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .roadmap-flow::before {
@@ -1068,11 +1083,14 @@
     text-align: left;
     padding-top: 0;
     display: flex;
+    align-items: flex-start;
     gap: 15px;
+    max-width: 100%;
   }
 
   .roadmap-step .circle {
     margin: 0;
+    min-width: 50px;
   }
 }
 
@@ -1468,4 +1486,159 @@
   .pp-policy {
     margin-top: 30px;
   }
+}
+
+/* WRAPPER */
+.fitur-v2 {
+  padding: 60px 20px;
+}
+
+.fitur-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* HEADING */
+.fitur-head {
+  margin-bottom: 40px;
+}
+
+.fitur-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 20px;
+  background: rgba(0, 255, 200, 0.1);
+  color: #00c896;
+}
+
+.fitur-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.fitur-subtitle {
+  color: #777;
+  margin-top: 10px;
+}
+
+/* TABLE */
+.fitur-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+.fitur-row {
+  background: #fff;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.fitur-row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ICON */
+.fitur-icon {
+  font-size: 22px;
+  width: 60px;
+  text-align: center;
+  color: #00c896;
+}
+
+/* TEXT */
+.fitur-text {
+  padding: 15px;
+}
+
+.fitur-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.fitur-desc {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* IMAGE */
+.fitur-img-wrap {
+  width: 160px;
+  padding: 10px;
+}
+
+.fitur-img-wrap img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .fitur-row {
+    display: block;
+    padding: 15px;
+  }
+
+  .fitur-icon {
+    margin-bottom: 10px;
+  }
+
+  .fitur-img-wrap {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .fitur-img-wrap img {
+    height: 140px;
+  }
+}
+
+.bizdom-section {
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.bizdom-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* HEADING */
+.bizdom-head {
+  margin-bottom: 40px;
+}
+
+.bizdom-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 20px;
+  background: rgba(0, 200, 150, 0.1);
+  color: #00c896;
+}
+
+.bizdom-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.bizdom-subtitle {
+  color: #666;
+  margin-top: 10px;
+}
+
+/* CONTENT */
+.bizdom-content p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
 }
